@@ -7,7 +7,7 @@
   <p><%= post.title %></p>
   <p><%= post.content %></p>
   <a href="/posts/<%= post.id %>">글 보러가기</a>
-  <a href="/posts/<%= post.id %>/destroy">[x]</a>
+  <a href="/posts/<%= post.id %>" data-method="delete" data-confirm="지울래?" >삭제하기</a>
   <a href="/posts/<%= post.id %>/edit">[수정]</a>
   <hr />
 <% end %>
