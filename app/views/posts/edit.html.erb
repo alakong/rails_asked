@@ -1,0 +1,9 @@
+<h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p>
+
+<form action="/posts/<%=@post.id%>/update" >
+  작성자 : <input type="text" name="username" value="<%=@post.username%>" /> <br />
+  제목 : <input type="text" name="title" value="<%=@post.title%>"/><br />
+  내용 : <textarea type="text" name="content"><%=@post.content%></textarea><br />
+  <input type="submit" value="얍" />
+</form>

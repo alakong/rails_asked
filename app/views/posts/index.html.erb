@@ -1,0 +1,13 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+<a href="/posts/new">글 쓰러가기</a>
+<% @posts.each do |post| %>
+  <p><%= post.id %></p>
+  <p><%= post.username %></p>
+  <p><%= post.title %></p>
+  <p><%= post.content %></p>
+  <a href="/posts/<%= post.id %>">글 보러가기</a>
+  <a href="/posts/<%= post.id %>/destroy">[x]</a>
+  <a href="/posts/<%= post.id %>/edit">[수정]</a>
+  <hr />
+<% end %>
