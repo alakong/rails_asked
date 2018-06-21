@@ -1,5 +1,10 @@
 
 class PostsController < ApplicationController
+
+#index액션을 제외하고 모든 액션이 실행되기전에 반드시 실행되는 것
+  before_action :authorize, except: [:index]
+
+
   def index
     @posts = Post.all
   end
@@ -8,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(username: params[:username],
+    Post.create(user_id: current_user.id,
                 title: params[:title],
                 content: params[:content]
     )
@@ -30,7 +35,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(username: params[:username],
+    post.update(user_id: current_user.id,
                 title: params[:title],
                 content: params[:content])
     redirect_to "/posts/#{post.id}"

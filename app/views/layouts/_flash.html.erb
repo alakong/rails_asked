@@ -1,0 +1,12 @@
+<!--부분적인 레이아웃 수정을 위한 파일 이름 앞에는 _를 붙인다.-->
+
+
+<% if flash[:alert] %>
+  <div class="alert alert-primary" role="alert">
+    <%= flash[:alert]%>
+  </div>
+<% elsif flash[:notice]%>
+  <div class="alert alert-warning" role="alert">
+    <%= flash[:notice]%>
+  </div>
+<%end%>
